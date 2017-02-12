@@ -1,0 +1,63 @@
+body {
+	background: white;
+	color: black;
+    width: 500px;
+}
+
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+button {
+    margin-left: 10px;
+    padding: 0.5rem;
+    background: #3acde4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* float: right; */
+}
+
+.session-url-item {
+    padding: 0 0.5rem;
+}
+.session-url-item:last-child {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+.list-header {
+    font-size: 1.1rem;
+}
+
+#saved-sessions ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.saved-session {
+    padding: 0.5rem;
+}
+.saved-session:hover {
+    background: rgba(130, 130, 130, 0.5);
+    cursor: pointer;
+}
+
+/* span.list-header:hover { */
+/*     background: rgba(130, 130, 130, 0.5); */
+/*     cursor: pointer; */
+/* } */
+/* span.list-header:hover:after { */
+/*     content: 'rename'; */
+/*     padding: 0.1rem; */
+/*     font-size: 8pt; */
+/* } */
+
+span.list-header:after {
+}
+

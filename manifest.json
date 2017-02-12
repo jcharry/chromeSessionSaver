@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "inclass-extension",
+    "version": "1.0",
+    "browser_action": {
+        "default_title": "In class",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "tabs",
+        "sessions",
+        "activeTab",
+        "storage"
+    ]
+}
