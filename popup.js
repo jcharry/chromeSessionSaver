@@ -12,6 +12,7 @@ window.addEventListener('load', function() {
     let renameInputFactory = function() {
         let container = document.createElement('div');
         let box = document.createElement('input');
+        box.setAttribute('placeholder', 'Save Name');
         let submit = document.createElement('button');
         submit.innerHTML = 'Submit';
         container.appendChild(box);
@@ -37,7 +38,7 @@ window.addEventListener('load', function() {
         let container = document.getElementById('list-container');
         openWindows.forEach(w => {
             let list = document.createElement('ol');
-            let id = `WindowID-${w.id}`;
+            let id = `id: ${w.id}`;
             let listHeader = document.createElement('span');
             listHeader.setAttribute('class', 'list-header');
             listHeader.innerHTML = id;
@@ -86,13 +87,25 @@ window.addEventListener('load', function() {
         Object.keys(all).forEach(key => {
             let sess = all[key];
             let item = document.createElement('li');
+            let closeButton = document.createElement('button');
+            closeButton.setAttribute('class', 'close-btn');
             item.innerHTML = key;
             item.setAttribute('class', 'saved-session');
+
+            closeButton.innerHTML = 'X';
+
             sessList.appendChild(item);
+            item.appendChild(closeButton);
+
+            closeButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                chrome.storage.sync.remove(key);
+                window.location.reload();
+            });
 
             item.addEventListener('click', () => {
                 // Open a new chrome window and load all tabs
-                console.log('clicked');
                 // Collect all urls as an array
                 let urls = sess.map(tab => {
                     return tab.url;

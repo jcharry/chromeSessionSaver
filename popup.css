@@ -2,22 +2,39 @@ body {
 	background: white;
 	color: black;
     width: 500px;
+    font-family: sans-serif;
 }
 
 ol {
-    padding: 0;
-    margin: 0;
+    padding: 2rem;
+    /* margin: 1rem; */
     list-style: none;
+    background-color: #f7f7f7;
 }
 
 button {
     margin-left: 10px;
     padding: 0.5rem;
-    background: #3acde4;
+    background: #bbbbbb;
     color: white;
     border: none;
     cursor: pointer;
-    /* float: right; */
+}
+ 
+li {
+    color: #353535;
+}
+
+ol > button {
+    float: right;
+}
+
+div > button {
+    /* float: none; */
+}
+
+.close-btn {
+    float: right;
 }
 
 .session-url-item {
@@ -42,10 +59,17 @@ h2 {
 }
 .saved-session {
     padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .saved-session:hover {
     background: rgba(130, 130, 130, 0.5);
     cursor: pointer;
+}
+#saved-sessions-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* span.list-header:hover { */
